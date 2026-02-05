@@ -11,16 +11,18 @@ public class Warrior extends Character {
     }
 
     public void performHeavyAttack(Character target) {
-        if (target != null && target.isAlive()) {
-            target.receiveDamage(this.strength);
-        } else {
-            if(target == null) {
-                throw new InvalidTargetException("No se puede realizar una acción a un objetivo nulo");
-            }
-            if(!target.isAlive()) {
-                throw new CharacterAlreadyDeadException(target.name + " ya está muerto");
-            }
-        }
+//        if (target != null && target.isAlive()) {
+//            target.receiveDamage(this.strength);
+//        } else {
+//            if(target == null) {
+//                throw new InvalidTargetException("No se puede realizar una acción a un objetivo nulo");
+//            }
+//            if(!target.isAlive()) {
+//                throw new CharacterAlreadyDeadException(target.name + " ya está muerto");
+//            }
+//        }
+        super.validateTarget(target);
+        target.receiveDamage(this.strength);
     }
 
     public void enterBerserkMode() {

@@ -1,5 +1,5 @@
 public class InvalidTargetException extends RuntimeException {
-    public InvalidTargetException(String message) {
-        super(message);
+    public InvalidTargetException() {
+        super("No se puede realizar una acción a un objetivo nulo");
     }
 }
